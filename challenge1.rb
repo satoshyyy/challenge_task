@@ -1,36 +1,36 @@
-puts "旅行プランを選択して下さい。"
+puts <<~TEXT
+       旅行プランを選択して下さい。
+        1. 沖縄旅行（10000円）
+        2. 北海道旅行（20000円）
+        3. 九州旅行（15000円）
+     TEXT
 
-travels = [
-  { name: "北海道", price: 20000 },
-  { name: "沖縄", price: 10000 },
-  { name: "九州", price: 15000 },
-]
-
-travels.each.with_index(1) do |travel, i|
-  puts "#{i}. #{travel[:name]}旅行 #{travel[:price]}円"
+# コードを追記
+while true
+  print "プランの番号を選択 > "
+  choose_plan = gets.to_i
+  break if (1..3).include?(choose_plan)
+  puts "1〜3の番号を入力して下さい。"
 end
-
-puts "プランの番号を選択 >"
-choose_plan = gets.to_i
-#puts "#{choose_plan}"
 
 case choose_plan
 when 1
-  puts "#{travels[0][:name]}旅行ですね"
+  place = "沖縄旅行"
   price = 20000
 when 2
-  puts "#{travels[1][:name]}旅行ですね"
+  place = "北海道旅行"
   price = 10000
 when 3
-  puts "#{travels[2][:name]}旅行ですね"
+  place = "九州旅行"
   price = 15000
-else
-  puts "1〜3の番号を入力して下さい。"
 end
+
+puts "#{place}ですね"
 
 puts "何名で予約されますか？ >"
 numbers = gets.to_i
 total_amount = (numbers * price)
+puts "#{numbers}名ですね >"
 
 if numbers < 1
   puts "1以上を入力して下さい。"
