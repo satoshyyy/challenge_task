@@ -20,17 +20,17 @@ def decide_members(chosen_plan)
   while true
     puts "何名で予約されますか？"
     puts "人数を入力 >"
-    head_amount = gets.to_i
-    break if head_amount >= 1 or head_amount.class == String
+    head_count = gets.to_i
+    break if head_count >= 1 or head_count.class == String
     puts "１以上を入力して下さい。"
   end
-  head_amount
+  head_count
 end
 
-def total_amount(chosen_plan, head_amount)
-  puts "#{head_amount}名ですね"
-  total_price = chosen_plan[:price] * head_amount
-  if head_amount >= 5
+def total_amount(chosen_plan, head_count)
+  puts "#{head_count}名ですね"
+  total_price = chosen_plan[:price] * head_count
+  if head_count >= 5
     puts "5名以上ですので10%割引となります"
     total_price *= 0.9
     puts "合計金額は#{total_price.floor}円になります。"

@@ -8,5 +8,5 @@ plans = [
 
 display(plans)
 chosen_plan = choose_plan(plans)
-head_amount = decide_members(chosen_plan)
-total_amount(chosen_plan, head_amount)
+head_count = decide_members(chosen_plan)
+total_amount(chosen_plan, head_count)
