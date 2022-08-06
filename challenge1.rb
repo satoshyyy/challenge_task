@@ -32,8 +32,6 @@ while true
   numbers = gets.to_i
   if numbers < 1
     puts "1以上を入力して下さい。"
-  elsif numbers.class == String
-    puts "1以上を入力して下さい。"
   else
     break
   end
@@ -45,9 +43,7 @@ total_amount = (numbers * price)
 if numbers >= 5
   puts "5名以上ですので10%割引となります。"
   total_amount *= 0.9
-  floor_total_amount = total_amount.floor
-  puts "#合計料金は#{floor_total_amount}円です。"
 else
-  floor_total_amount = total_amount.floor
-  puts "合計料金は#{floor_total_amount}円です。"
 end
+floor_total_amount = total_amount.floor
+puts "合計料金は#{floor_total_amount}円です。"
